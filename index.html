@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Интерактивная галерея</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <nav class="main-nav">
+        <div class="logo">Галерея</div>
+        <ul class="menu">
+          <li><a href="#gallery">Галерея</a></li>
+          <li><a href="#about">О нас</a></li>
+          <li><a href="#contact">Контакты</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <h1>Добро пожаловать в нашу галерею</h1>
+        <p>Исследуйте коллекцию удивительных фотографий</p>
+        <button class="btn feedback-btn">Обратная связь</button>
+      </div>
+      <svg class="animated-svg" width="200" height="200" viewBox="0 0 200 200">
+        <circle cx="100" cy="100" r="50" fill="none" stroke="#6c63ff" stroke-width="2"/>
+        <path class="animated-path" d="M 100,50 A 50,50 0 0,1 150,100" fill="none" stroke="#6c63ff" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </section>
+
+    <section id="gallery" class="gallery">
+      <div class="container">
+        <h2>Галерея</h2>
+        <div class="gallery-grid">
+          <div class="gallery-item">
+            <img src="image/nature-1.jpg" alt="Природа 1">
+          </div>
+          <div class="gallery-item">
+            <img src="image/nature-2.jpg" alt="Природа 2">
+          </div>
+          <div class="gallery-item">
+            <img src="image/nature-3.jpg" alt="Природа 3">
+          </div>
+          <div class="gallery-item">
+            <img src="image/city-1.jpg" alt="Город 1">
+          </div>
+          <div class="gallery-item">
+            <img src="image/city-2.jpg" alt="Город 2">
+          </div>
+          <div class="gallery-item">
+            <img src="image/city-3.jpg" alt="Город 3">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="about">
+      <div class="container">
+        <h2>О нас</h2>
+        <p>Мы собираем и представляем лучшие фотографии со всего мира.</p>
+      </div>
+    </section>
+
+    <section id="countdown" class="countdown">
+      <div class="container">
+        <h2>До получения диплома МФТИ осталось:</h2>
+        <div class="countdown-timer">
+          <div class="countdown-item">
+            <span id="days">00</span>
+            <span class="label">Дней</span>
+          </div>
+          <div class="countdown-item">
+            <span id="hours">00</span>
+            <span class="label">Часов</span>
+          </div>
+          <div class="countdown-item">
+            <span id="minutes">00</span>
+            <span class="label">Минут</span>
+          </div>
+          <div class="countdown-item">
+            <span id="seconds">00</span>
+            <span class="label">Секунд</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+      <div class="container">
+        <h2>Контакты</h2>
+        <p>Свяжитесь с нами, если у вас есть вопросы или предложения.</p>
+        <button class="btn feedback-btn">Обратная связь</button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2025 Интерактивная галерея</p>
+    </div>
+  </footer>
+
+  <div class="popup gallery-popup">
+    <div class="popup-content">
+      <button class="close-btn">&times;</button>
+      <button class="nav-btn prev-btn">&larr;</button>
+      <div class="popup-image-container">
+        <img src="" alt="" class="popup-image">
+      </div>
+      <button class="nav-btn next-btn">&rarr;</button>
+    </div>
+  </div>
+
+  <div class="popup feedback-popup">
+    <div class="popup-content">
+      <button class="close-btn">&times;</button>
+      <h3>Обратная связь</h3>
+      <form id="feedback-form">
+        <div class="form-group">
+          <label for="name">Имя</label>
+          <input type="text" id="name" name="name" required>
+          <span class="error-message" id="name-error"></span>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required>
+          <span class="error-message" id="email-error"></span>
+        </div>
+        <div class="form-group">
+          <label for="phone">Телефон</label>
+          <input type="tel" id="phone" name="phone" required>
+          <span class="error-message" id="phone-error"></span>
+        </div>
+        <div class="form-group">
+          <label for="message">Сообщение</label>
+          <textarea id="message" name="message" required></textarea>
+          <span class="error-message" id="message-error"></span>
+        </div>
+        <button type="submit" class="btn submit-btn">Отправить</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="popup timed-popup">
+    <div class="popup-content">
+      <button class="close-btn">&times;</button>
+      <h3>Специальное предложение!</h3>
+      <p>Подпишитесь на нашу рассылку и получите доступ к эксклюзивным материалам.</p>
+      <button class="btn subscribe-btn">Подписаться</button>
+    </div>
+  </div>
+
+  <script src="js/countdown.js"></script>
+  <script src="js/feedback.js"></script>
+  <script src="js/gallery.js"></script>
+  <script src="js/stickyHeader.js"></script>
+  <script src="js/svgAnimation.js"></script>
+  <script src="js/timedPopup.js"></script>
+</body>
+</html>
